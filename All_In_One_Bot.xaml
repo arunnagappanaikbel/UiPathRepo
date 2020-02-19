@@ -1,0 +1,174 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="All_In_One_Bot" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:s2="clr-namespace:System;assembly=System" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sae="clr-namespace:System.Activities.Expressions;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sas="clr-namespace:System.Activities.Statements;assembly=System.Activities" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sc1="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System" xmlns:sd="clr-namespace:System.Data;assembly=System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data.DataSetExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sd2="clr-namespace:System.Diagnostics;assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sd3="clr-namespace:System.Drawing;assembly=System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" xmlns:sd4="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:snm1="clr-namespace:System.Net.Mail;assembly=System" xmlns:sx="clr-namespace:System.Xml;assembly=System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:uc="clr-namespace:UiPath.Core;assembly=UiPath.UiAutomation.Activities" xmlns:uc1="clr-namespace:UiPath.Core;assembly=UiPath.System.Activities" xmlns:uca="clr-namespace:UiPath.Core.Activities;assembly=UiPath.UiAutomation.Activities" xmlns:uca1="clr-namespace:UiPath.Core.Activities;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_SendEmailTo" Type="InArgument(x:String)" />
+    <x:Property Name="In_SendEmailBody" Type="InArgument(x:String)" />
+    <x:Property Name="In_SendEmailSub" Type="InArgument(x:String)" />
+    <x:Property Name="In_DestinationMailFolder" Type="InArgument(x:String)" />
+    <x:Property Name="In_EmailUsername" Type="InArgument(x:String)" />
+    <x:Property Name="In_EmailPassword" Type="InArgument(x:String)" />
+    <x:Property Name="In_MoveFileSource" Type="InArgument(x:String)" />
+    <x:Property Name="In_MoveFileDestination" Type="InArgument(x:String)" />
+    <x:Property Name="In_GetMailFolderMesseges" Type="InArgument(x:String)" />
+    <x:Property Name="In_ConnectionString" Type="InArgument(x:String)" />
+    <x:Property Name="In_ProviderName" Type="InArgument(x:String)" />
+    <x:Property Name="In_SqlQuery" Type="InArgument(x:String)" />
+    <x:Property Name="In_QueryResultPath" Type="InArgument(x:String)" />
+    <x:Property Name="In_SendEmailFlag" Type="InArgument(x:Boolean)" />
+    <x:Property Name="In_DbConnectionFlag" Type="InArgument(x:Boolean)" />
+    <x:Property Name="In_MoveFilesFlag" Type="InArgument(x:Boolean)" />
+    <x:Property Name="In_MoveEmailFlag" Type="InArgument(x:Boolean)" />
+    <x:Property Name="In_SqlNonQuery" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>712.666666666667,2787.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <TextExpression.NamespacesForImplementation>
+    <scg1:List x:TypeArguments="x:String" Capacity="11">
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg1:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg1:List x:TypeArguments="AssemblyReference" Capacity="13">
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+    </scg1:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="692.666666666667,2687.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg1:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[In_SendEmailFlag = True]" sap:VirtualizedContainerService.HintSize="650.666666666667,395.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="376,241.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg1:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:SendExchangeMail Bcc="{x:Null}" Cc="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[In_SendEmailBody]" DisplayName="Send Exchange Mail Message" ExchangeVersion="Exchange2007_SP1" From="[In_EmailUsername]" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendExchangeMail_1" IsBodyHtml="False" IsDraft="False" Password="[In_EmailPassword]" SaveCopy="False" Server="https://outlook.office365.com" Subject="[In_SendEmailSub]" To="[In_SendEmailTo]" User="[In_EmailUsername]" />
+        </Sequence>
+      </If.Then>
+    </If>
+    <If Condition="[In_MoveEmailFlag = True]" sap:VirtualizedContainerService.HintSize="650.666666666667,625.333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Move Email" sap:VirtualizedContainerService.HintSize="454.666666666667,471.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="scg1:List(snm1:MailMessage)" Name="MailMesseges" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg1:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetExchangeMailMessages Domain="{x:Null}" EmailAutodiscover="{x:Null}" SharedMailbox="{x:Null}" TimeoutMS="{x:Null}" CustomFolder="[In_GetMailFolderMesseges]" DisplayName="Get Exchange Mail Messages" ExchangeVersion="Exchange2007_SP1" GetAttachements="False" sap:VirtualizedContainerService.HintSize="412.666666666667,22" sap2010:WorkflowViewState.IdRef="GetExchangeMailMessages_1" IsBodyHtml="False" MailFolder="Calendar" MarkAsRead="False" Messages="[MailMesseges]" OnlyUnreadMessages="False" Password="[In_EmailPassword]" Server="https://outlook.office365.com" Top="30" User="[In_EmailUsername]" />
+          <ui:ForEach x:TypeArguments="snm1:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412.666666666667,317.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[MailMesseges]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="snm1:MailMessage">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="snm1:MailMessage" Name="mail" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,178.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg1:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MoveMessageToFolder Domain="{x:Null}" EmailAutodiscover="{x:Null}" SharedMailbox="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Move Exchange Mail Message" ExchangeVersion="Exchange2007_SP1" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="MoveMessageToFolder_1" MailFolder="[In_DestinationMailFolder]" MailMessage="[mail]" Password="[In_EmailPassword]" Server="https://outlook.office365.com" User="[In_EmailUsername]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+        </Sequence>
+      </If.Then>
+    </If>
+    <If Condition="[In_DbConnectionFlag = True]" sap:VirtualizedContainerService.HintSize="650.666666666667,714" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Sequence DisplayName="DB Connection" sap:VirtualizedContainerService.HintSize="376,560" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="ui:DatabaseConnection" Name="ConnectionString" />
+            <Variable x:TypeArguments="sd4:DataTable" Name="OutputDataTable" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg1:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DatabaseConnect DatabaseConnection="[ConnectionString]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="[In_ProviderName]" ConnectionString="[In_ConnectionString]" />
+          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[ConnectionString]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[In_SqlNonQuery]">
+            <ui:ExecuteNonQuery.Parameters>
+              <scg1:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteNonQuery.Parameters>
+          </ui:ExecuteNonQuery>
+          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[OutputDataTable]" DisplayName="Execute Query" ExistingDbConnection="[ConnectionString]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[In_SqlQuery]">
+            <ui:ExecuteQuery.Parameters>
+              <scg1:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteQuery.Parameters>
+          </ui:ExecuteQuery>
+          <ui:WriteRange AddHeaders="False" DataTable="[OutputDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[In_QueryResultPath]" />
+        </Sequence>
+      </If.Then>
+    </If>
+    <If Condition="[In_MoveFilesFlag = True]" sap:VirtualizedContainerService.HintSize="650.666666666667,740.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Then>
+        <Sequence DisplayName="Move Files" sap:VirtualizedContainerService.HintSize="504.666666666667,586.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="s1:String[]" Name="allFilelist" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg1:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="462.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s1:String[]">[allFilelist]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s1:String[]">[Directory.GetFiles(In_MoveFileSource)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="462.666666666667,392.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[allFilelist]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="x:String">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:String" Name="file" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="426,254" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg1:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MoveFile ContinueOnError="{x:Null}" Destination="[In_MoveFileDestination]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,162" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[file]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+        </Sequence>
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>

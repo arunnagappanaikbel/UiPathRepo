@@ -1,0 +1,84 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,402.666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:lirary1;assembly=lirary1" xmlns:m="clr-namespace:MyLibrary;assembly=MyLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="376,302.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke All_In_One_Bot workflow" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="All_In_One_Bot.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="In_SendEmailTo">arunnaik217@gmail.com</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_SendEmailBody" xml:space="preserve">Hi Arun,
+ This is Automation Team Mail
+ 
+ Thanks and Regards,
+ Automation Team Enquero</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_SendEmailSub" xml:space="preserve">All In One Bot Testing </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_DestinationMailFolder">Sent Items</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_EmailUsername">arun.nagappa@enquero.com</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_EmailPassword">ar12un--</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_MoveFileSource">C:\Users\ArunNagappaNaik\Desktop\uipath\files</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_MoveFileDestination">C:\Users\ArunNagappaNaik\Desktop\uipath\MoveFilesDemo</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_GetMailFolderMesseges">Drafts</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_ConnectionString">Data Source=LAPTOP-0LQSB02N;Initial Catalog=Arun;User ID=sa;Password=ar12un--</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_ProviderName">System.Data.SqlClient</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_SqlQuery">select * from Admin</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_QueryResultPath">C:\Users\ArunNagappaNaik\Desktop\uipath\files\QueryResult.xlsx</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="In_SendEmailFlag" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="In_DbConnectionFlag">True</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="In_MoveFilesFlag" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="In_MoveEmailFlag" />
+        <InArgument x:TypeArguments="x:String" x:Key="In_SqlNonQuery" xml:space="preserve">INSERT INTO Admin(email,passsword)VALUES( 'arun.nagappa@enquero.com','20180601'
+    );</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <l:Sequence1 In_ConnectionString="{x:Null}" In_DbConnectionFlag="{x:Null}" In_DestinationMailFolder="{x:Null}" In_EmailPassword="{x:Null}" In_EmailUsername="{x:Null}" In_GetMailFolderMesseges="{x:Null}" In_MoveEmailFlag="{x:Null}" In_MoveFileDestination="{x:Null}" In_MoveFileSource="{x:Null}" In_MoveFilesFlag="{x:Null}" In_ProviderName="{x:Null}" In_QueryResultPath="{x:Null}" In_SendEmailBody="{x:Null}" In_SendEmailFlag="{x:Null}" In_SendEmailSub="{x:Null}" In_SendEmailTo="{x:Null}" In_SqlNonQuery="{x:Null}" In_SqlQuery="{x:Null}" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Sequence1_1" />
+    <m:Three_in_One In_ConnectionString="{x:Null}" In_DbConnectionFlag="{x:Null}" In_DestinationMailFolder="{x:Null}" In_EmailPassword="{x:Null}" In_EmailUsername="{x:Null}" In_GetMailFolderMesseges="{x:Null}" In_MoveEmailFlag="{x:Null}" In_MoveFileDestination="{x:Null}" In_MoveFileSource="{x:Null}" In_MoveFilesFlag="{x:Null}" In_ProviderName="{x:Null}" In_QueryResultPath="{x:Null}" In_SendEmailBody="{x:Null}" In_SendEmailFlag="{x:Null}" In_SendEmailSub="{x:Null}" In_SendEmailTo="{x:Null}" In_SqlNonQuery="{x:Null}" In_SqlQuery="{x:Null}" DisplayName="Three in One" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Three_in_One_1" />
+  </Sequence>
+</Activity>
